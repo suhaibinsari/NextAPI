@@ -19,7 +19,7 @@ export default function Page() {
         try {
             const singleTodo = await axios.get('https://dummyjson.com/todos/1');
             setSingleTodo(singleTodo.data.todo);
-            console.log('singleTodo',setSingleTodo)
+            console.log('singleTodo', setSingleTodo)
         } catch (error) {
             console.log('error', error);
         }
@@ -72,6 +72,11 @@ export default function Page() {
                     <div className="grid grid-cols-3 gap-4">
                         {allTodos.map((todo) => (
                             <div key={todo.id} className="border p-4 rounded-md shadow-md">
+                                <img
+                                    src="https://firebasestorage.googleapis.com/v0/b/images-fc7b7.appspot.com/o/IMG_4730.jpg?alt=media&token=3c460925-96fb-4c38-90d1-a9f530a04283"
+                                    alt="no-img"
+                                    className="w-full h-48 object-cover rounded-md"
+                                />
                                 <h3 className="text-lg font-semibold">{todo.todo}</h3>
                                 <p className="text-gray-500">ID: {todo.id}</p>
                             </div>
@@ -83,11 +88,17 @@ export default function Page() {
                     <div className="grid grid-cols-3 gap-4">
                         {randomtodos.map((todo) => (
                             <div key={todo.id} className="border p-4 rounded-md shadow-md">
+                                <img
+                                    src="https://firebasestorage.googleapis.com/v0/b/images-fc7b7.appspot.com/o/IMG_4730.jpg?alt=media&token=3c460925-96fb-4c38-90d1-a9f530a04283"
+                                    alt="no-img"
+                                    className="w-full h-48 object-cover rounded-md"
+                                />
                                 <h3 className="text-lg font-semibold">{todo.todo}</h3>
                                 <p className="text-gray-500">ID: {todo.id}</p>
                             </div>
                         ))}
                     </div>
+
                 </div>
             </div>
 
